@@ -1,0 +1,38 @@
+{
+  "name": "ui-kit",
+  "version": "1.0.0",
+  "description": "UI kit for building beutiful ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9001 -c .storybook -s ./public"
+  },
+  "author": "smith",
+  "license": "ISC",
+  "dependencies": {
+    "@storybook/addon-info": "^4.1.11",
+    "@storybook/addon-knobs": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "@types/jest": "^24.0.0",
+    "@types/react": "^16.8.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "jest": "^24.1.0",
+    "react": "^16.8.1",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-dom": "^16.8.1",
+    "storybook-addon-jsx": "^6.0.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.3.1",
+    "classnames": "^2.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@types/classnames": "^2.2.7",
+    "@types/node": "^10.12.21",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
+  }
+}

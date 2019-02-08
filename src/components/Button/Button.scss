@@ -1,0 +1,41 @@
+@import "../../styles/fonts";
+$gradientAngle: 100deg;
+
+.button {
+  @extend %defaultFont;
+
+  display: inline-flex;
+  border-radius: 1.6em;
+  padding: 0.8em 1.2em;
+  background-color: $white;
+  text-align: center;
+  cursor: pointer;
+  color: $gray500;
+
+  &.primary {
+    background: linear-gradient($gradientAngle, $primary200, $primary500);
+    color: $white;
+
+    img {
+      filter: invert(1);
+    }
+  }
+
+  &.secondary {
+    background: linear-gradient($gradientAngle, $secondary100, $secondary500);
+    color: $white;
+
+    img {
+      filter: invert(1);
+    }
+  }
+
+  &.disabled {
+    background-color: $gray100;
+    color: $gray300;
+
+    img {
+      filter: invert(1) brightness(50%);
+    }
+  }
+}
