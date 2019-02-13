@@ -1,5 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
+
 const styles = require('./Icon.scss');
 
 export interface IIcon {

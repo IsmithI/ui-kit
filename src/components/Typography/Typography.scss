@@ -1,0 +1,39 @@
+@import "../../styles/fonts";
+
+.typography {
+  @extend %defaultFont;
+
+  &.muted {
+    color: $gray200;
+  }
+
+  &.h6 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &.h5 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &.h4 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &.h3 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  &.h2 {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  &.h1 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+}

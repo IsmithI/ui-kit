@@ -1,6 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { Icon, IIcon } from "../Icon/Icon";
+
 const styles = require('./Button.scss');
 
 export interface IButton {
@@ -11,7 +12,7 @@ export interface IButton {
 	icon?: IIcon;
 }
 
-export const Button = ({variant = 'default', icon, ...props}: IButton) => {
+export const Button = ({ variant = 'default', icon, ...props }: IButton) => {
 	const classes = cn(styles.button, props.className, {
 		[styles[variant]]: variant,
 	});

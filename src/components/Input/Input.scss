@@ -1,0 +1,52 @@
+@import "../../styles/fonts";
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  padding: 1.2em 0.6em 0.6em;
+
+  border: 3px solid $primary300;
+  border-radius: 18px;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  .input {
+    top: 0;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    background-color: transparent;
+
+    @extend %defaultFont;
+  }
+
+  .label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    bottom: 0;
+    top: 0;
+    transition: transform 200ms ease, color 200ms ease-in;
+
+    padding: 0.5em;
+    font-size: 18px;
+    color: $gray500;
+
+    &.minimized {
+      bottom: 0.6em;
+      background-color: $white;
+      color: $primary300;
+      transform: translateY(-50%) scale(0.8);
+    }
+  }
+}

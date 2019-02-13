@@ -3,14 +3,16 @@
   margin-right: 0.2em;
   $width: 2.5em;
   width: $width;
-  >img {
+
+  > img {
     width: $width;
   }
 
   &.xs {
     $width: 1.2em;
     width: $width;
-    >img {
+
+    > img {
       width: $width;
     }
   }
@@ -18,15 +20,17 @@
   &.sm {
     $width: 1.8em;
     width: $width;
-    >img {
+
+    > img {
       width: $width;
     }
   }
 
-  &.md{
+  &.md {
     $width: 3.6em;
     width: $width;
-    >img {
+
+    > img {
       width: $width;
     }
   }
@@ -34,7 +38,8 @@
   &.lg {
     $width: 6em;
     width: $width;
-    >img {
+
+    > img {
       width: $width;
     }
   }
