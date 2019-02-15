@@ -1,0 +1,16 @@
+.customAnimation-start {
+  padding: 0;
+}
+
+@keyframes customAnimation {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 3em;
+  }
+}
+
+.customAnimation-end {
+  padding: 3em;
+}

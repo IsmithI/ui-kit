@@ -37,17 +37,17 @@ const directionOptions = {
 stories.add('Simple layout', () => (
 
 	<Grid
-		justify={select('Justify', justifyOptions)}
-		alignItems={select('Align items', alignItemsOptions)}
-		wrap={select('Wrap', wrapOptions)}
+		justify={select('Justify', justifyOptions, 'flex-start')}
+		alignItems={select('Align items', alignItemsOptions, 'flex-start')}
+		wrap={select('Wrap', wrapOptions, 'wrap')}
 		spacing={text('Spacing', '1em')}
-		direction={select('Direction', directionOptions)}>
-		<Item>
+		direction={select('Direction', directionOptions, 'row')}>
+		<Item cell={6}>
 			<Card>
 				<Typography variant={"h3"}>A</Typography>
 			</Card>
 		</Item>
-		<Item>
+		<Item cell={2}>
 			<Card>
 				<Typography variant={"h3"}>B</Typography>
 			</Card>

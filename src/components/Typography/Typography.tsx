@@ -15,6 +15,6 @@ export const Typography = ({ variant = 'normal', children, className, onClick }:
 		[styles[variant]]: variant
 	});
 	return (
-		<span className={classes} onClick={onClick}>{children}</span>
+		<p className={classes} onClick={onClick}>{children}</p>
 	)
 };

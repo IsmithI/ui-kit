@@ -1,6 +1,7 @@
 @import "../../styles/fonts";
 
 .typography {
+  margin: 0.4em 0 0.2em;
   @extend %defaultFont;
 
   &.muted {

@@ -7,20 +7,28 @@ interface IGrid extends IItem, IHasChildren {
 	wrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
 	spacing?: string;
 	direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+	style?: {};
+	expand?: boolean;
 }
 
-export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direction }: IGrid) => {
-	const style = {
+export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direction, expand, style }: IGrid) => {
+	const styles: any = {
 		display: 'flex',
 		justifyContent: justify,
 		alignItems: alignItems,
 		flexWrap: wrap,
 		flexDirection: direction,
-		flex
+		flex,
+		...style
 	};
 
+	if (expand) {
+		styles.height = '100%';
+		styles.width = '100%';
+	}
+
 	return (
-		<div style={style}>
+		<div style={styles}>
 			{React.Children.map(children, ((child: any) => {
 				if (child === null || (child.type.displayName !== 'Item' && child.type.displayName !== 'Grid')) {
 					console.error("Grid child should be Grid or Item");
@@ -28,7 +36,7 @@ export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direc
 				}
 				return spacing ?
 					React.cloneElement(child, {
-						style: { margin: spacing }
+						style: { margin: spacing, ...child.props.style }
 					})
 					:
 					child;
@@ -40,12 +48,16 @@ export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direc
 interface IItem extends IHasChildren {
 	flex?: number;
 	style?: Object;
+	cell?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | false;
 }
 
-export const Item = ({ children, flex, style }: IItem) => {
-	const mergedStyle = {
+export const Item = ({ children, flex, style, cell }: IItem) => {
+	const mergedStyle: any = {
 		flex,
 		...style
 	};
+
+	if (cell) mergedStyle.width = cell / 12 * 100 + '%';
+
 	return <div style={mergedStyle}>{children}</div>;
 };

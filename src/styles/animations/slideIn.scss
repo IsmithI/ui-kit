@@ -1,0 +1,78 @@
+
+// Right =========================>
+.slideIn-right-start {
+  transform: translateX(-100vw);
+}
+
+@keyframes slideIn-right {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+//=========================>
+
+.slideIn-right-end {
+  transform: translateX(0);
+}
+
+// Left =========================>
+.slideIn-left-start {
+  transform: translateX(100vw);
+}
+
+@keyframes slideIn-left {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slideIn-left-end {
+  transform: translateX(0);
+}
+//=========================>
+
+
+// Up =========================>
+.slideIn-up-start {
+  transform: translateY(100vh);
+}
+
+@keyframes slideIn-up {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slideIn-up-end {
+  transform: translateY(0);
+}
+//=========================>
+
+
+// Down =========================>
+.slideIn-down-start {
+  transform: translateY(-100vh);
+}
+
+@keyframes slideIn-down {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slideIn-down-end {
+  transform: translateY(0);
+}
+//=========================>
