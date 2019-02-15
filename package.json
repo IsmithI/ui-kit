@@ -10,6 +10,16 @@
   "author": "smith",
   "license": "ISC",
   "dependencies": {
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@types/classnames": "^2.2.7",
+    "@types/node": "^10.12.26",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "@storybook/addon-info": "^4.1.11",
     "@storybook/addon-knobs": "^4.1.11",
     "@storybook/react": "^4.1.11",
@@ -25,15 +35,5 @@
     "ts-jest": "^23.10.5",
     "typescript": "^3.3.3",
     "react": "latest"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@types/classnames": "^2.2.7",
-    "@types/node": "^10.12.26",
-    "babel-loader": "^8.0.5",
-    "css-loader": "^2.1.0",
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1"
   }
 }
