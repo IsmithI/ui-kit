@@ -1,5 +1,5 @@
-import * as React from 'react';
-import cn from 'classnames';
+import * as React from "react";
+import cn from "classnames";
 const styles = require("../../styles/animations.scss");
 
 export interface IAnimation {

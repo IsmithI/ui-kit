@@ -1,8 +1,8 @@
 {
   "name": "ui-kit",
   "version": "1.0.0",
-  "description": "UI kit for building beutiful ui",
-  "main": "index.js",
+  "description": "UI kit for building beautiful ui",
+  "repository": "https://github.com/IsmithI/ui-kit.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9001 -c .storybook -s ./public"
@@ -10,6 +10,17 @@
   "author": "smith",
   "license": "ISC",
   "dependencies": {
+    "@storybook/addon-info": "^4.1.11",
+    "@storybook/addon-knobs": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "@types/react": "^16.8.3",
+    "awesome-typescript-loader": "^5.2.1",
+    "classnames": "^2.2.6",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-dom": "^16.8.2",
+    "react-portal": "^4.2.0",
+    "typescript": "^3.3.3",
+    "react": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -20,20 +31,6 @@
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "@storybook/addon-info": "^4.1.11",
-    "@storybook/addon-knobs": "^4.1.11",
-    "@storybook/react": "^4.1.11",
-    "@types/jest": "^24.0.5",
-    "@types/react": "^16.8.3",
-    "awesome-typescript-loader": "^5.2.1",
-    "classnames": "^2.2.6",
-    "jest": "^24.1.0",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "react-dom": "^16.8.2",
-    "react-portal": "^4.2.0",
-    "storybook-addon-jsx": "^6.0.0",
-    "ts-jest": "^23.10.5",
-    "typescript": "^3.3.3",
-    "react": "latest"
+    "storybook-addon-jsx": "^6.0.0"
   }
 }
