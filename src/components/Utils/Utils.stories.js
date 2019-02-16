@@ -1,11 +1,12 @@
 import React from 'react';
 import { storiesOf } from "@storybook/react";
 import { DelayedUnmount } from "./DelayedUnmount";
-import { number, text, boolean } from '@storybook/addon-knobs'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { Typography } from "../Typography/Typography";
 import { AnimatedMount } from "./AnimatedMount";
 import { Grid, Item } from "../Grid/Grid";
 import { Card } from "../Card/Card";
+import { DeviceWidth } from "./DeviceWidth";
 
 const stories = storiesOf('Components/Utils', module);
 
@@ -21,7 +22,7 @@ const closeAnimation = {
 stories.add('Delayed unmount', () => (
 	<DelayedUnmount time={number('Disappear in (ms)', 2000)}>
 		<Typography>
-			{text('Text', 'Some content that will disappear')}
+			{text('TextInput', 'Some content that will disappear')}
 		</Typography>
 	</DelayedUnmount>
 ));
@@ -40,4 +41,21 @@ stories.add('Animated mount', () => (
 			</Item>
 		</Grid>
 	</AnimatedMount>
+));
+
+const breakpoints = {
+	xs: 'xs',
+	sm: 'sm',
+	md: 'md',
+	lg: 'lg',
+	xl: 'xl'
+};
+
+stories.add('Conditional view width', () => (
+	<DeviceWidth breakOn={select('Breakpoint', breakpoints, 'sm')} hidden={boolean('Hidden', false)}>
+		<Typography>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse explicabo id in minima pariatur quidem quod saepe
+			sint tenetur velit? A amet corporis cumque dignissimos doloribus, rem similique sit vitae.
+		</Typography>
+	</DeviceWidth>
 ));

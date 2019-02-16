@@ -39,20 +39,46 @@ stories.add('Simple layout', () => (
 	<Grid
 		justify={select('Justify', justifyOptions, 'flex-start')}
 		alignItems={select('Align items', alignItemsOptions, 'flex-start')}
-		wrap={select('Wrap', wrapOptions, 'wrap')}
+		wrap={select('Wrap', wrapOptions, 'nowrap')}
 		spacing={text('Spacing', '1em')}
 		direction={select('Direction', directionOptions, 'row')}>
-		<Item cell={6}>
+		<Item>
 			<Card>
 				<Typography variant={"h3"}>A</Typography>
 			</Card>
 		</Item>
-		<Item cell={2}>
+		<Item>
 			<Card>
 				<Typography variant={"h3"}>B</Typography>
 			</Card>
 		</Item>
 		<Item>
+			<Card>
+				<Typography variant={"h3"}>C</Typography>
+			</Card>
+		</Item>
+	</Grid>
+
+));
+
+stories.add('Layout with breakpoint', () => (
+
+	<Grid
+		justify='space-evenly'
+		alignItems='flex-start'
+		wrap='nowrap'
+		spacing={text('Spacing', '1em')}>
+		<Item sm={6} md={4}>
+			<Card>
+				<Typography variant={"h3"}>A</Typography>
+			</Card>
+		</Item>
+		<Item sm={6} md={5}>
+			<Card>
+				<Typography variant={"h3"}>B</Typography>
+			</Card>
+		</Item>
+		<Item sm={0} md={3}>
 			<Card>
 				<Typography variant={"h3"}>C</Typography>
 			</Card>

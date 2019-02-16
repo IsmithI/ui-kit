@@ -42,13 +42,17 @@ storiesOf('Components/Animations', module)
 	.add('Fade and slide', () => (
 		<Animation keyframe='slideIn-right' duration={700}>
 			<Animation keyframe='fadeIn' duration={700}>
-				<Card>
-					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur ea facilis nesciunt tempore!
-						Accusantium at distinctio hic id incidunt itaque magni minima nemo quasi sapiente suscipit temporibus
-						tenetur, unde!
-					</Typography>
-				</Card>
+				<Grid>
+					<Item xs={4}>
+						<Card>
+							<Typography>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur ea facilis nesciunt tempore!
+								Accusantium at distinctio hic id incidunt itaque magni minima nemo quasi sapiente suscipit temporibus
+								tenetur, unde!
+							</Typography>
+						</Card>
+					</Item>
+				</Grid>
 			</Animation>
 		</Animation>
 	))

@@ -15,11 +15,11 @@ const typographyVariants = {
 };
 
 const stories = storiesOf('Components/Typography', module);
-stories.add('Text', (
+stories.add('TextInput', (
 	() => (
 		<Typography
 			variant={select('Variant', typographyVariants)}
-			children={text('Text', "Some sample text")}
+			children={text('TextInput', "Some sample text")}
 		/>
 	))
 );

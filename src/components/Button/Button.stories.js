@@ -11,25 +11,25 @@ const icon = {
 storiesOf('Components/Button', module)
 	.add('Regular', () => (
 			<Button
-				label={text('label', 'Button')}
 				variant={select('variant', {
 					Default: 'default',
 					Primary: 'primary',
 					Secondary: 'secondary',
 					Disabled: 'disabled'
-				})}
-			/>
+				})}>
+				{text('label', 'Button')}
+			</Button>
 		)
 	)
 	.add('With icon', () => (
 		<Button
-			label={text('label', 'Button')}
 			icon={icon}
 			variant={select('variant', {
 				Default: 'default',
 				Primary: 'primary',
 				Secondary: 'secondary',
 				Disabled: 'disabled'
-			})}
-		/>
+			})}>
+			{text('label', 'Button')}
+		</Button>
 	));

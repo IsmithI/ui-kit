@@ -1,12 +1,13 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { Typography } from "../Typography/Typography";
+import { Typography } from "../Typography";
+import { IHasChildren } from "../../interfaces";
 
 const styles = require('./Input.scss');
 
-export interface IInput {
-	value?: string;
-	onChange?: (e: React.SyntheticEvent) => void;
+export interface IInput extends IHasChildren {
+	value?: any;
+	onChange?: (value: any) => void;
 	onFocus?: (e: React.SyntheticEvent) => void;
 	onBlur?: (e: React.SyntheticEvent) => void;
 	className?: string;
@@ -24,13 +25,18 @@ export class Input extends React.Component<IInput> {
 
 	render() {
 		const { focused } = this.state;
-		const { className, value, label, ...props } = this.props;
-		const classes = cn(styles.wrapper, className && styles[className]);
+		const { className, value, label, children, ...props } = this.props;
+		const classes = cn(
+			styles.wrapper,
+			className && styles[className],
+			focused && styles.focused
+		);
 
 		return (
 			<div className={classes}>
-				<input ref={input => this.input = input} {...props} className={styles.input} value={value} onFocus={this.onFocus} onBlur={this.onBlur}/>
+				<input ref={input => this.input = input} {...props} onChange={this.onChange} className={styles.input} value={value} onFocus={this.onFocus} onBlur={this.onBlur}/>
 				{label && <Label text={label} minimized={!!value || focused} onClick={this.focusByLabelClick}/>}
+				{children}
 			</div>
 		);
 	}
@@ -53,6 +59,10 @@ export class Input extends React.Component<IInput> {
 		else {
 			e.stopPropagation();
 		}
+	};
+
+	onChange = (e: any) => {
+		if (this.props.onChange) this.props.onChange(e.target.value);
 	}
 }
 

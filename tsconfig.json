@@ -15,17 +15,6 @@
     "moduleResolution": "node",
     "rootDir": "src",
     "baseUrl": "src",
-    "paths": {
-      "interfaces": [
-        "interfaces"
-      ],
-      "components": [
-        "components"
-      ],
-      "styles": [
-        "styles"
-      ]
-    },
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

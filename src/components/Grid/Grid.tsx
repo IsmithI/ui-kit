@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IHasChildren } from "interfaces";
+import { breakpoints, getBreakpoint } from "../Utils/DeviceWidth";
 
 interface IGrid extends IItem, IHasChildren {
 	justify?: 'center' | 'flex-start' | 'flex-end' | 'space-around' | 'space-between' | 'space-evenly';
@@ -45,19 +46,62 @@ export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direc
 	)
 };
 
+type Breakpoints = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | false;
+
 interface IItem extends IHasChildren {
 	flex?: number;
 	style?: Object;
-	cell?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | false;
+	xs?: Breakpoints;
+	sm?: Breakpoints;
+	md?: Breakpoints;
+	lg?: Breakpoints;
 }
 
-export const Item = ({ children, flex, style, cell }: IItem) => {
-	const mergedStyle: any = {
-		flex,
-		...style
+export class Item extends React.Component<IItem> {
+
+	state: {
+		breakpoint: any
 	};
 
-	if (cell) mergedStyle.width = cell / 12 * 100 + '%';
+	constructor(props: IItem) {
+		super(props);
 
-	return <div style={mergedStyle}>{children}</div>;
-};
+		this.state = {
+			breakpoint: getBreakpoint()
+		}
+	}
+
+	componentDidMount(): void {
+		window.addEventListener('resize', this.update);
+	}
+
+	update = () => {
+		const breakpoint = getBreakpoint();
+		if (this.state.breakpoint !== breakpoint) this.setState({ breakpoint });
+	};
+
+	render() {
+		const { breakpoint } = this.state;
+		const { children, flex, style, ...props } = this.props;
+		const mergedStyle: any = {
+			flex,
+			...style
+		};
+
+		for (const b in props) {
+			if (typeof breakpoints[b] !== "undefined" && (breakpoints[breakpoint] >= breakpoints[b])) {
+				const calculatedWidth = props[b] / 12 * 100;
+
+				if (!calculatedWidth && breakpoint === b) return null;
+
+				mergedStyle.width = calculatedWidth + '%';
+			}
+		}
+
+		return <div style={mergedStyle}>{children}</div>;
+	}
+
+	componentWillUnmount(): void {
+		window.removeEventListener('resize', this.update);
+	}
+}

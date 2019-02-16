@@ -1,9 +1,9 @@
-import { Animation, IAnimation } from "../Animation/Animation";
+import { Animation, IAnimation } from "../Animation";
 import { IModal, Modal } from "./Modal";
 import { IHasChildren } from "interfaces";
 import * as React from "react";
-import { DelayedUnmount } from "../Utils/DelayedUnmount";
-import { AnimatedMount } from "../Utils/AnimatedMount";
+import { DelayedUnmount } from "../Utils";
+import { AnimatedMount } from "../Utils";
 
 const styles = require('../../styles/utils.scss');
 const modal = require('../Modal/Modal.scss');

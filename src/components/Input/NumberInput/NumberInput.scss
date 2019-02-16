@@ -1,0 +1,22 @@
+.numberInput {
+  display: inline-flex;
+}
+
+$size: 16px;
+
+.buttons {
+  transform: translateX(-2.5 * $size);
+  padding: 0.3em;
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size;
+    height: $size;
+    padding: 0.2em;
+    margin: 2px 0;
+
+    border-radius: 6px;
+  }
+}
