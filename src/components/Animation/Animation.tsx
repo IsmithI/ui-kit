@@ -1,5 +1,6 @@
 import * as React from "react";
 import cn from "classnames";
+import { RefObject } from "react";
 const styles = require("../../styles/animations.scss");
 
 export interface IAnimation {
@@ -14,11 +15,12 @@ export interface IAnimation {
 
 export class Animation extends React.Component<IAnimation> {
 
-	timeout: any;
+	listener: any;
 	styles: any;
 	state: {
 		ended: boolean
 	};
+	element: RefObject<HTMLDivElement>;
 
 	static defaultProps = {
 		keyframe: 'fadeIn',
@@ -32,18 +34,12 @@ export class Animation extends React.Component<IAnimation> {
 		super(props);
 		this.state = { ended: !props.duration };
 		this.styles = props.animations || styles;
+		this.element = React.createRef();
 	}
 
 	componentDidMount(): void {
-		const { duration, delay = 0 } = this.props;
-
-		if (duration) {
-			this.timeout = setTimeout(() => {
-					this.setState({ ended: true });
-				},
-				duration + delay
-			);
-		}
+		if (this.element.current)
+			this.listener = this.element.current.addEventListener('animationend', this.handleAnimationEnd);
 	}
 
 	render() {
@@ -56,14 +52,20 @@ export class Animation extends React.Component<IAnimation> {
 		};
 
 		return (
-			<div style={style} className={classes}>
+			<div ref={this.element} style={style} className={classes}>
 				{children}
 			</div>
 		)
 	}
 
 	componentWillUnmount(): void {
-		if (this.timeout) clearTimeout(this.timeout);
+		if (this.listener && this.element.current) {
+			this.element.current.removeEventListener('animationend', this.handleAnimationEnd);
+		}
+	}
+
+	handleAnimationEnd = () => {
+		this.setState({ ended: true });
 	}
 
 }

@@ -29,7 +29,7 @@ storiesOf('Components/Modal', module)
 		</Modal>
 	))
 	.add('AnimatedModal', () => (
-		<AnimatedModal openAnimation={openAnimation} closeAnimation={closeAnimation} isOpen={boolean('Open', true)}>
+		<AnimatedModal openAnimation={openAnimation} closeAnimation={closeAnimation} isOpen={boolean('Open', false)}>
 			<Grid justify='center' alignItems='center' expand>
 				<Item cell={8}>
 					<Card>

@@ -13,7 +13,7 @@ interface IAnimatedModal extends IModal, IHasChildren {
 	closeAnimation: IAnimation;
 }
 
-export const AnimatedModal = ({ isOpen = true, children, closeAnimation, openAnimation }: IAnimatedModal) => {
+export const AnimatedModal = ({ isOpen = true, children, overlay = <Overlay isOpen={isOpen} />, closeAnimation, openAnimation }: IAnimatedModal) => {
 	const props = isOpen ? { ...openAnimation } : { ...closeAnimation };
 	const content = (
 		<Animation {...props} className={styles.fullSize}>
@@ -22,12 +22,12 @@ export const AnimatedModal = ({ isOpen = true, children, closeAnimation, openAni
 	);
 
 	return isOpen ? (
-		<Modal isOpen={true} overlay={<Overlay/>}>
+		<Modal isOpen={true} overlay={overlay}>
 			{content}
 		</Modal>
 	) : (
 		<DelayedUnmount time={(closeAnimation.duration || 0) + (closeAnimation.delay || 0)}>
-			<Modal isOpen={true} overlay={<Overlay isOpen={false}/>}>
+			<Modal isOpen={true} overlay={overlay}>
 				{content}
 			</Modal>
 		</DelayedUnmount>
