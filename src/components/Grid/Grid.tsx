@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { IHasChildren } from "interfaces";
 import { breakpoints, getBreakpoint } from "../Utils/DeviceWidth";
+import { ReactElement } from "react";
 
-interface IGrid extends IItem, IHasChildren {
+export interface IGrid extends IItem, IHasChildren {
 	justify?: 'center' | 'flex-start' | 'flex-end' | 'space-around' | 'space-between' | 'space-evenly';
 	alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline';
 	wrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
@@ -30,9 +31,9 @@ export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direc
 
 	return (
 		<div style={styles}>
-			{React.Children.map(children, ((child: any) => {
-				if (child === null || (child.type.displayName !== 'Item' && child.type.displayName !== 'Grid')) {
-					console.error("Grid child should be Grid or Item");
+			{React.Children.map(children, ((child: ReactElement<IItem> | null) => {
+				if (child === null) {
+					console.error("Grid child should be Grid or Item.");
 					return null;
 				}
 				return spacing ?
@@ -48,7 +49,7 @@ export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direc
 
 type Breakpoints = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | false;
 
-interface IItem extends IHasChildren {
+export interface IItem extends IHasChildren {
 	flex?: number;
 	style?: Object;
 	xs?: Breakpoints;

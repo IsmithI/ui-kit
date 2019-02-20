@@ -6,6 +6,7 @@ import { boolean } from '@storybook/addon-knobs'
 import { DelayedUnmount } from "../Utils/DelayedUnmount";
 import { Grid, Item } from "../Grid/Grid";
 import { Card } from "../Card/Card";
+import { CascadeSlideAnimation } from "./CascadeSlideAnimation";
 
 const customAnimations = require('./customAnimations.scss');
 
@@ -66,4 +67,77 @@ storiesOf('Components/Animations', module)
 				</Typography>
 			</Card>
 		</Animation>
+	))
+	.add('Cascade animation with Grid and Item', () => (
+		<Grid spacing='1em' direction='column'>
+			<CascadeSlideAnimation>
+				<Item>
+					<Card>
+						<Typography>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore doloribus
+							eaque earum error illum, iure, nam omnis placeat provident quae temporibus vero vitae voluptatum!
+							Incidunt,
+							veniam!
+						</Typography>
+					</Card>
+				</Item>
+				<Item>
+					<Card>
+						<Typography>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore doloribus
+							eaque earum error illum, iure, nam omnis placeat provident quae temporibus vero vitae voluptatum!
+							Incidunt,
+							veniam!
+						</Typography>
+					</Card>
+				</Item>
+				<Item>
+					<Card>
+						<Typography>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam atque consequuntur dolore doloribus
+							eaque earum error illum, iure, nam omnis placeat provident quae temporibus vero vitae voluptatum!
+							Incidunt,
+							veniam!
+						</Typography>
+					</Card>
+				</Item>
+			</CascadeSlideAnimation>
+		</Grid>
+	))
+	.add('Cascade animation with regular elements', () => (
+		<CascadeSlideAnimation>
+			<div>
+				<Typography>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus adipisci alias
+					consequuntur dicta eius, expedita nisi optio quibusdam, recusandae repellat suscipit tempore ut voluptate
+					voluptatem! Ea explicabo iure nihil.
+				</Typography>
+			</div>
+			<div>
+				<Typography>
+					Ad amet assumenda deleniti esse eum ex officia omnis quia. Accusantium animi dolor doloremque ea
+					ex harum, hic ipsam itaque iusto magni maiores natus nisi porro praesentium sunt tenetur vitae.
+				</Typography>
+			</div>
+			<div>
+				<Typography>
+					Ab, beatae commodi dicta eum illum reprehenderit voluptatibus. Atque beatae corporis cupiditate
+					debitis dolorem eius ex expedita, iure magni minima, odio officiis omnis quam soluta suscipit tempore ullam
+					veritatis voluptatibus?
+				</Typography>
+			</div>
+		</CascadeSlideAnimation>
+	))
+	.add('Animation as Grid child', () => (
+		<Grid spacing='1em'>
+			<Animation keyframe='fadeIn'>
+				<Card>
+					<Typography>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores
+						aspernatur atque aut consequuntur cum facilis, id in iusto, laudantium nam non quae quisquam quo rem sequi
+						temporibus unde. Commodi.
+					</Typography>
+				</Card>
+			</Animation>
+		</Grid>
 	));

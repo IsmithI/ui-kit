@@ -13,26 +13,37 @@ interface IAnimatedModal extends IModal, IHasChildren {
 	closeAnimation: IAnimation;
 }
 
-export const AnimatedModal = ({ isOpen = true, children, overlay = <Overlay isOpen={isOpen} />, closeAnimation, openAnimation }: IAnimatedModal) => {
-	const props = isOpen ? { ...openAnimation } : { ...closeAnimation };
-	const content = (
-		<Animation {...props} className={styles.fullSize}>
-			{children}
-		</Animation>
-	);
+export class AnimatedModal extends React.Component<IAnimatedModal> {
 
-	return isOpen ? (
-		<Modal isOpen={true} overlay={overlay}>
-			{content}
-		</Modal>
-	) : (
-		<DelayedUnmount time={(closeAnimation.duration || 0) + (closeAnimation.delay || 0)}>
+	constructor(props: IAnimatedModal) {
+		super(props);
+		this.state = {
+			firstMount: !props.isOpen
+		}
+	}
+
+	render() {
+		const { isOpen, openAnimation, closeAnimation, overlay = <Overlay isOpen={isOpen} />, children } = this.props;
+		const props = isOpen ? { ...openAnimation } : { ...closeAnimation };
+		const content = (
+			<Animation {...props} className={styles.fullSize}>
+				{children}
+			</Animation>
+		);
+
+		return isOpen ? (
 			<Modal isOpen={true} overlay={overlay}>
 				{content}
 			</Modal>
-		</DelayedUnmount>
-	)
-};
+		) : (
+			<DelayedUnmount time={(closeAnimation.duration || 0) + (closeAnimation.delay || 0)}>
+				<Modal isOpen={true} overlay={overlay}>
+					{content}
+				</Modal>
+			</DelayedUnmount>
+		)
+	}
+}
 
 const open: IAnimation = {
 	keyframe: 'fadeIn',

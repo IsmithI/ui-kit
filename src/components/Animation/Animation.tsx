@@ -1,9 +1,11 @@
 import * as React from "react";
-import cn from "classnames";
 import { RefObject } from "react";
+import cn from "classnames";
+import { IItem, Item } from "../Grid";
+
 const styles = require("../../styles/animations.scss");
 
-export interface IAnimation {
+export interface IAnimation extends IItem {
 	keyframe?: string;
 	duration?: number;
 	delay?: number;
@@ -11,6 +13,7 @@ export interface IAnimation {
 	className?: string;
 	animations?: {};
 	direction?: 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
+	style?: Object;
 }
 
 export class Animation extends React.Component<IAnimation> {
@@ -52,9 +55,11 @@ export class Animation extends React.Component<IAnimation> {
 		};
 
 		return (
-			<div ref={this.element} style={style} className={classes}>
-				{children}
-			</div>
+			<Item {...this.props} style={this.props.style}>
+				<div ref={this.element} style={style} className={classes}>
+					{children}
+				</div>
+			</Item>
 		)
 	}
 
