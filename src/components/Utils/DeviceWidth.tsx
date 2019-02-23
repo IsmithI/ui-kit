@@ -47,9 +47,10 @@ export class DeviceWidth extends React.Component<IDeviceWidth> {
 export function getBreakpoint(): Breakpoints {
   let searched: any = 'xs';
   for (const key in breakpoints) {
-    const breakpoint = breakpoints[key];
-
-    if (window.innerWidth > breakpoint) searched = key;
+    if (breakpoints.hasOwnProperty(key)) {
+      const breakpoint = breakpoints[key];
+      if (window.innerWidth > breakpoint) searched = key;
+    }
   }
 
   return searched;

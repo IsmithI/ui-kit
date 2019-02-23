@@ -29,7 +29,7 @@ export const Grid = ({
   const styles: any = {
     display: 'flex',
     justifyContent: justify,
-    alignItems: alignItems,
+    alignItems,
     flexWrap: wrap,
     flexDirection: direction,
     flex,
@@ -62,7 +62,7 @@ type Breakpoints = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | false;
 
 export interface IItem extends IHasChildren {
   flex?: number;
-  style?: Object;
+  style?: object;
   xs?: Breakpoints;
   sm?: Breakpoints;
   md?: Breakpoints;

@@ -1,5 +1,5 @@
 {
-  "name": "ui-kit",
+  "name": "@ismithi/ui-kit",
   "version": "1.0.0",
   "description": "UI kit for building beautiful ui",
   "repository": "https://github.com/IsmithI/ui-kit.git",
@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"src/**/*.tsx\" \"src/**/*.jsx\"",
-    "lint": "tslint -p tsconfig.json",
+    "lint": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9001 -c .storybook -s ./public",
     "prepare": "npm run build",

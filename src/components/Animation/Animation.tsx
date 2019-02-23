@@ -13,16 +13,10 @@ export interface IAnimation extends IItem {
   className?: string;
   animations?: {};
   direction?: 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
-  style?: Object;
+  style?: object;
 }
 
 export class Animation extends React.Component<IAnimation> {
-  listener: any;
-  styles: any;
-  state: {
-    ended: boolean;
-  };
-  element: RefObject<HTMLDivElement>;
 
   static defaultProps = {
     keyframe: 'fadeIn',
@@ -31,6 +25,13 @@ export class Animation extends React.Component<IAnimation> {
     delay: 0,
     direction: 'normal',
   };
+
+  listener: any;
+  styles: any;
+  state: {
+    ended: boolean;
+  };
+  element: RefObject<HTMLDivElement>;
 
   constructor(props: IAnimation) {
     super(props);
