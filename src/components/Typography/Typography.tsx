@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IHasChildren } from "interfaces";
+import { IHasChildren } from "../../interfaces";
 import cn from 'classnames';
 
 const styles = require('./Typography.scss');

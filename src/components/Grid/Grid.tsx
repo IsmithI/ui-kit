@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IHasChildren } from "interfaces";
+import { IHasChildren } from "../../interfaces";
 import { breakpoints, getBreakpoint } from "../Utils/DeviceWidth";
 import { ReactElement } from "react";
 

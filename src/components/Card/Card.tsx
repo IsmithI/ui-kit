@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { IHasChildren } from "interfaces";
+import { IHasChildren } from "../../interfaces";
 
 const styles = require('./Card.scss');
 

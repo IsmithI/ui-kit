@@ -1,6 +1,6 @@
 import { Animation, IAnimation } from "../Animation";
 import { IModal, Modal } from "./Modal";
-import { IHasChildren } from "interfaces";
+import { IHasChildren } from "../../interfaces";
 import * as React from "react";
 import { DelayedUnmount } from "../Utils";
 import { AnimatedMount } from "../Utils";

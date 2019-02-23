@@ -1,5 +1,5 @@
 import { Animation, IAnimation } from "../Animation";
-import { IHasChildren } from "interfaces";
+import { IHasChildren } from "../../interfaces";
 import * as React from "react";
 import { DelayedUnmount } from "./DelayedUnmount";
 
