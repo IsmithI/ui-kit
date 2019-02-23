@@ -1,0 +1,14 @@
+@mixin elevation() {
+  &.none-elevation {
+    box-shadow: none;
+  }
+  &.regular-elevation {
+    box-shadow: 0 0.4em 1.4em 0.2em rgba(0, 0, 0, 0.15);
+  }
+  &.high-elevation {
+    box-shadow: 0 0.6em 2em 0.3em rgba(0, 0, 0, 0.15);
+  }
+  &.highest-elevation {
+    box-shadow: 0 0.8em 2em 0.4em rgba(0, 0, 0, 0.15);
+  }
+}

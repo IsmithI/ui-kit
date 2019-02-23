@@ -64,6 +64,7 @@ stories.add('Simple layout', () => (
 stories.add('Layout with breakpoint', () => (
 
 	<Grid
+		style={{ resize: 'both', overflow: 'auto' }}
 		justify='space-evenly'
 		alignItems='flex-start'
 		wrap='nowrap'

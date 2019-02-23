@@ -11,9 +11,10 @@ export interface IGrid extends IItem, IHasChildren {
 	direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
 	style?: {};
 	expand?: boolean;
+	className?: string;
 }
 
-export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direction, expand, style }: IGrid) => {
+export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direction, expand, style, className }: IGrid) => {
 	const styles: any = {
 		display: 'flex',
 		justifyContent: justify,
@@ -30,7 +31,7 @@ export const Grid = ({ children, justify, alignItems, wrap, flex, spacing, direc
 	}
 
 	return (
-		<div style={styles}>
+		<div className={className} style={styles}>
 			{React.Children.map(children, ((child: ReactElement<IItem> | null) => {
 				if (child === null) {
 					console.error("Grid child should be Grid or Item.");

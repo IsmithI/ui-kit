@@ -13,7 +13,7 @@ interface IAnimatedModal extends IModal, IHasChildren {
 	closeAnimation: IAnimation;
 }
 
-export class AnimatedModal extends React.Component<IAnimatedModal> {
+export class AnimatedModal extends React.Component<IAnimatedModal, any> {
 
 	constructor(props: IAnimatedModal) {
 		super(props);
@@ -23,6 +23,7 @@ export class AnimatedModal extends React.Component<IAnimatedModal> {
 	}
 
 	render() {
+		const { firstMount } = this.state;
 		const { isOpen, openAnimation, closeAnimation, overlay = <Overlay isOpen={isOpen} />, children } = this.props;
 		const props = isOpen ? { ...openAnimation } : { ...closeAnimation };
 		const content = (
@@ -35,7 +36,7 @@ export class AnimatedModal extends React.Component<IAnimatedModal> {
 			<Modal isOpen={true} overlay={overlay}>
 				{content}
 			</Modal>
-		) : (
+		) : !firstMount && (
 			<DelayedUnmount time={(closeAnimation.duration || 0) + (closeAnimation.delay || 0)}>
 				<Modal isOpen={true} overlay={overlay}>
 					{content}
@@ -43,6 +44,11 @@ export class AnimatedModal extends React.Component<IAnimatedModal> {
 			</DelayedUnmount>
 		)
 	}
+
+	componentDidUpdate(prevProps: Readonly<IAnimatedModal>, prevState: Readonly<any>, snapshot?: any): void {
+			if (prevProps.isOpen !== this.props.isOpen) this.setState({ firstMount: false });
+	}
+
 }
 
 const open: IAnimation = {

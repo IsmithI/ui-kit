@@ -1,0 +1,13 @@
+@mixin padding() {
+  &.sm-padding {
+    padding: 0.4em;
+  }
+
+  &.md-padding {
+    padding: 0.8em;
+  }
+
+  &.lg-padding {
+    padding: 1.2em;
+  }
+}

@@ -10,17 +10,20 @@
   "author": "smith",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@storybook/addon-info": "^4.1.11",
     "@storybook/addon-knobs": "^4.1.11",
     "@storybook/react": "^4.1.11",
     "@types/react": "^16.8.3",
     "awesome-typescript-loader": "^5.2.1",
     "classnames": "^2.2.6",
+    "react": "latest",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.8.2",
     "react-portal": "^4.2.0",
-    "typescript": "^3.3.3",
-    "react": "latest"
+    "typescript": "^3.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
