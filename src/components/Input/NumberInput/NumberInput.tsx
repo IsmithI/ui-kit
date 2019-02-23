@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input } from "../Input";
+import { Input } from '../Input';
 // import { Grid, Item } from "../../Grid";
 // import { Button } from "../../Button";
 // import cn from 'classnames';
@@ -7,22 +7,22 @@ import { Input } from "../Input";
 const styles = require('./NumberInput.scss');
 
 interface INumberInput {
-	value: number;
-	onChange?: (value: number) => void;
-	onFocus?: (e: React.SyntheticEvent) => void;
-	onBlur?: (e: React.SyntheticEvent) => void;
-	className?: string;
-	label?: string;
+  value: number;
+  onChange?: (value: number) => void;
+  onFocus?: (e: React.SyntheticEvent) => void;
+  onBlur?: (e: React.SyntheticEvent) => void;
+  className?: string;
+  label?: string;
 }
 
 export const NumberInput = ({ onChange, value, ...props }: INumberInput) => (
-	<div className={styles.numberInput}>
-		<Input type='number' {...props} onChange={onChange} value={value}/>
-		{/*<Buttons*/}
-			{/*onAdd={() => onChange && onChange(value+1)}*/}
-			{/*onReduce={() => onChange && onChange(value-1)}*/}
-		{/*/>*/}
-	</div>
+  <div className={styles.numberInput}>
+    <Input type="number" {...props} onChange={onChange} value={value} />
+    {/*<Buttons*/}
+    {/*onAdd={() => onChange && onChange(value+1)}*/}
+    {/*onReduce={() => onChange && onChange(value-1)}*/}
+    {/*/>*/}
+  </div>
 );
 
 // interface IButtons {

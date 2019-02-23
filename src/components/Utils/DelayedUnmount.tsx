@@ -1,34 +1,30 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface IDelayedUnmount {
-	time?: number;
-	onEnd?: () => void;
+  time?: number;
+  onEnd?: () => void;
 }
 
 export class DelayedUnmount extends React.Component<IDelayedUnmount> {
+  state = {
+    ended: false,
+  };
 
-	state = {
-		ended: false
-	};
+  timeout: any;
 
-	timeout: any;
+  render() {
+    return !this.state.ended && this.props.children;
+  }
 
-	render() {
-		return !this.state.ended && this.props.children;
-	}
+  componentDidMount(): void {
+    const { time = 500, onEnd } = this.props;
+    this.timeout = setTimeout(() => {
+      this.setState({ ended: true });
+      if (onEnd) onEnd();
+    }, time);
+  }
 
-	componentDidMount(): void {
-		const { time = 500, onEnd } = this.props;
-		this.timeout = setTimeout(() => {
-				this.setState({ ended: true });
-				if (onEnd) onEnd();
-			},
-			time
-		);
-	}
-
-	componentWillUnmount(): void {
-		if (this.timeout) clearTimeout(this.timeout);
-	}
-
+  componentWillUnmount(): void {
+    if (this.timeout) clearTimeout(this.timeout);
+  }
 }

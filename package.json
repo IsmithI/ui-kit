@@ -3,9 +3,22 @@
   "version": "1.0.0",
   "description": "UI kit for building beautiful ui",
   "repository": "https://github.com/IsmithI/ui-kit.git",
+  "files": [
+    "build/lib/**"
+  ],
+  "main": "build/lib/index.js",
+  "types": "build/lib/index.d.ts",
   "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"src/**/*.tsx\" \"src/**/*.jsx\"",
+    "lint": "tslint -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 9001 -c .storybook -s ./public"
+    "storybook": "start-storybook -p 9001 -c .storybook -s ./public",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "author": "smith",
   "license": "ISC",
@@ -23,6 +36,7 @@
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.8.2",
     "react-portal": "^4.2.0",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.3.3"
   },
   "devDependencies": {
@@ -32,8 +46,11 @@
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
     "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
     "sass-loader": "^7.1.0",
+    "storybook-addon-jsx": "^6.0.0",
     "style-loader": "^0.23.1",
-    "storybook-addon-jsx": "^6.0.0"
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0"
   }
 }
