@@ -27,11 +27,11 @@
     "experimentalDecorators": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/interfaces/*"
   ],
   "exclude": [
     "node_modules",
-    "build",
-    "scripts"
+    "build"
   ]
 }

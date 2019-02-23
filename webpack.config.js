@@ -1,10 +1,7 @@
 const path = require('path');
 
 module.exports = {
-	entry: {
-		app: './src/index.ts',
-		vendor: ['react', 'react-dom']
-	},
+	entry: './src/index.ts',
 	output: {
 		path: path.resolve(__dirname, 'build', "lib"),
 	},
@@ -15,12 +12,15 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(ts|tsx)$/,
-				loader: 'awesome-typescript-loader',
+				loader: 'ts-loader',
+				include: [
+					path.resolve(__dirname, 'src'),
+				]
 			},
 			{
 				test: /\.scss$/,
 				include: [
-					path.resolve(__dirname, "src"),
+					path.resolve(__dirname, "src")
 				],
 				use: [
 					{ loader: "style-loader" }, // creates style nodes from JS strings,,
