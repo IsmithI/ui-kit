@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { ReactNode } from 'react';
-import { IHasChildren } from '../../interfaces';
-import { Portal } from '../Utils';
+import * as React from "react";
+import { ReactNode } from "react";
+import { IHasChildren } from "../../interfaces";
+import { Portal } from "../Utils";
 
-const styles = require('./Modal.scss');
+const styles = require("./Modal.scss");
 
 export interface IModal {
   isOpen?: boolean;

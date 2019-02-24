@@ -24,11 +24,14 @@
     "noUnusedLocals": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "index.d.ts",
+      "node_modules/@types"
+    ]
   },
   "include": [
-    "src/**/*",
-    "src/interfaces/*"
+    "src"
   ],
   "exclude": [
     "node_modules",

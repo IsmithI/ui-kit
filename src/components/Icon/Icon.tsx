@@ -1,15 +1,15 @@
-import * as React from 'react';
-import cn from 'classnames';
+import * as React from "react";
+import cn from "classnames";
 
-const styles = require('./Icon.scss');
+const styles = require("./Icon.scss");
 
 export interface IIcon {
   src: string;
   alt?: string;
-  variant?: 'default' | 'sm' | 'md' | 'lg';
+  variant?: "default" | "sm" | "md" | "lg";
 }
 
-export const Icon = ({ src, alt, variant = 'default', ...props }: IIcon) => {
+export const Icon = ({ src, alt, variant = "default", ...props }: IIcon) => {
   const classes = cn(styles.icon, {
     [styles[variant]]: variant,
   });

@@ -1,9 +1,9 @@
-import * as React from 'react';
-import cn from 'classnames';
-import { Typography } from '../Typography';
-import { IHasChildren } from '../../interfaces';
+import * as React from "react";
+import cn from "classnames";
+import { Typography } from "../Typography";
+import { IHasChildren } from "../../interfaces";
 
-const styles = require('./Input.scss');
+const styles = require("./Input.scss");
 
 export interface IInput extends IHasChildren {
   value?: any;
@@ -11,7 +11,7 @@ export interface IInput extends IHasChildren {
   onFocus?: (e: React.SyntheticEvent) => void;
   onBlur?: (e: React.SyntheticEvent) => void;
   className?: string;
-  type?: 'text' | 'number' | string;
+  type?: "text" | "number" | string;
   label?: string;
 }
 

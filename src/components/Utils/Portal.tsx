@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 // @ts-ignore
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from "react-dom";
 
-let modalRoot = document.getElementById('modal');
+let modalRoot = document.getElementById("modal");
 if (!modalRoot) {
-  modalRoot = document.createElement('div');
+  modalRoot = document.createElement("div");
   document.body.appendChild(modalRoot);
 }
 
@@ -13,7 +13,7 @@ export class Portal extends React.Component<any> {
 
   constructor(props: any) {
     super(props);
-    this.el = document.createElement('div');
+    this.el = document.createElement("div");
   }
 
   componentDidMount() {

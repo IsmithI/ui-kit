@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
 
-type Breakpoints = 'xs' | 'sm' | 'md' | 'lg';
+type Breakpoints = "xs" | "sm" | "md" | "lg";
 
 interface IDeviceWidth {
   breakOn: Breakpoints;
@@ -21,7 +21,7 @@ export class DeviceWidth extends React.Component<IDeviceWidth> {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.update);
+    window.addEventListener("resize", this.update);
   }
 
   update = () => {
@@ -30,7 +30,7 @@ export class DeviceWidth extends React.Component<IDeviceWidth> {
   };
 
   componentWillUnmount(): void {
-    window.removeEventListener('resize', this.update);
+    window.removeEventListener("resize", this.update);
   }
 
   render() {
@@ -45,7 +45,7 @@ export class DeviceWidth extends React.Component<IDeviceWidth> {
 }
 
 export function getBreakpoint(): Breakpoints {
-  let searched: any = 'xs';
+  let searched: any = "xs";
   for (const key in breakpoints) {
     if (breakpoints.hasOwnProperty(key)) {
       const breakpoint = breakpoints[key];

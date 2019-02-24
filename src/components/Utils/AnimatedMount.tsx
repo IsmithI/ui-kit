@@ -1,7 +1,7 @@
-import { Animation, IAnimation } from '../Animation';
-import { IHasChildren } from '../../interfaces';
-import * as React from 'react';
-import { DelayedUnmount } from './DelayedUnmount';
+import { Animation, IAnimation } from "../Animation";
+import { IHasChildren } from "../../interfaces";
+import * as React from "react";
+import { DelayedUnmount } from "./DelayedUnmount";
 
 export interface IAnimatedMount extends IHasChildren {
   openAnimation: IAnimation;

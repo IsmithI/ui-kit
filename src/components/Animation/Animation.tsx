@@ -1,29 +1,28 @@
-import * as React from 'react';
-import { RefObject } from 'react';
-import cn from 'classnames';
-import { IItem, Item } from '../Grid';
+import * as React from "react";
+import { RefObject } from "react";
+import cn from "classnames";
+import { IItem, Item } from "../Grid";
 
-const styles = require('../../styles/animations.scss');
+const styles = require("../../styles/animations.scss");
 
 export interface IAnimation extends IItem {
   keyframe?: string;
   duration?: number;
   delay?: number;
-  interpolation?: 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out';
+  interpolation?: "linear" | "ease" | "ease-in" | "ease-out" | "ease-in-out";
   className?: string;
   animations?: {};
-  direction?: 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
+  direction?: "normal" | "reverse" | "alternate" | "alternate-reverse";
   style?: object;
 }
 
 export class Animation extends React.Component<IAnimation> {
-
   static defaultProps = {
-    keyframe: 'fadeIn',
+    keyframe: "fadeIn",
     duration: 500,
-    interpolation: 'ease',
+    interpolation: "ease",
     delay: 0,
-    direction: 'normal',
+    direction: "normal",
   };
 
   listener: any;
@@ -42,12 +41,12 @@ export class Animation extends React.Component<IAnimation> {
 
   componentDidMount(): void {
     if (this.element.current)
-      this.listener = this.element.current.addEventListener('animationend', this.handleAnimationEnd);
+      this.listener = this.element.current.addEventListener("animationend", this.handleAnimationEnd);
   }
 
   render() {
     const { ended } = this.state;
-    const { children, keyframe = 'fadeIn', duration, className, interpolation, delay, direction } = this.props;
+    const { children, keyframe = "fadeIn", duration, className, interpolation, delay, direction } = this.props;
 
     const classes = cn(ended ? this.styles[`${keyframe}-end`] : this.styles[`${keyframe}-start`], className);
     const style = {
@@ -65,7 +64,7 @@ export class Animation extends React.Component<IAnimation> {
 
   componentWillUnmount(): void {
     if (this.listener && this.element.current) {
-      this.element.current.removeEventListener('animationend', this.handleAnimationEnd);
+      this.element.current.removeEventListener("animationend", this.handleAnimationEnd);
     }
   }
 

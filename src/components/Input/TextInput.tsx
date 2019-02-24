@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Input } from './Input';
+import * as React from "react";
+import { Input } from "./Input";
 
 interface IText {
   value?: string;

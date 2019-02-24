@@ -1,12 +1,12 @@
-import { Animation, IAnimation } from '../Animation';
-import { IModal, Modal } from './Modal';
-import { IHasChildren } from '../../interfaces';
-import * as React from 'react';
-import { DelayedUnmount } from '../Utils';
-import { AnimatedMount } from '../Utils';
+import { Animation, IAnimation } from "../Animation";
+import { IModal, Modal } from "./Modal";
+import { IHasChildren } from "../../interfaces";
+import * as React from "react";
+import { DelayedUnmount } from "../Utils";
+import { AnimatedMount } from "../Utils";
 
-const styles = require('../../styles/utils.scss');
-const modal = require('../Modal/Modal.scss');
+const styles = require("../../styles/utils.scss");
+const modal = require("../Modal/Modal.scss");
 
 interface IAnimatedModal extends IModal, IHasChildren {
   openAnimation: IAnimation;
@@ -52,11 +52,11 @@ export class AnimatedModal extends React.Component<IAnimatedModal, any> {
 }
 
 const open: IAnimation = {
-  keyframe: 'fadeIn',
+  keyframe: "fadeIn",
   duration: 500,
 };
 const close: IAnimation = {
-  keyframe: 'fadeOut',
+  keyframe: "fadeOut",
   duration: 500,
 };
 

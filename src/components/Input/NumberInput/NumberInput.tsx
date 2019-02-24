@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { Input } from '../Input';
+import * as React from "react";
+import { Input } from "../Input";
 // import { Grid, Item } from "../../Grid";
 // import { Button } from "../../Button";
 // import cn from 'classnames';
 
-const styles = require('./NumberInput.scss');
+const styles = require("./NumberInput.scss");
 
 interface INumberInput {
   value: number;

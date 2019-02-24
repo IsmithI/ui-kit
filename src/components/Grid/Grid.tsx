@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { IHasChildren } from '../../interfaces';
-import { breakpoints, getBreakpoint } from '../Utils/DeviceWidth';
-import { ReactElement } from 'react';
+import * as React from "react";
+import { IHasChildren } from "../../interfaces";
+import { breakpoints, getBreakpoint } from "../Utils/DeviceWidth";
+import { ReactElement } from "react";
 
 export interface IGrid extends IItem, IHasChildren {
-  justify?: 'center' | 'flex-start' | 'flex-end' | 'space-around' | 'space-between' | 'space-evenly';
-  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline';
-  wrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  justify?: "center" | "flex-start" | "flex-end" | "space-around" | "space-between" | "space-evenly";
+  alignItems?: "center" | "flex-start" | "flex-end" | "stretch" | "baseline";
+  wrap?: "wrap" | "nowrap" | "wrap-reverse";
   spacing?: string;
-  direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+  direction?: "row" | "row-reverse" | "column" | "column-reverse";
   style?: {};
   expand?: boolean;
   className?: string;
@@ -27,7 +27,7 @@ export const Grid = ({
   className,
 }: IGrid) => {
   const styles: any = {
-    display: 'flex',
+    display: "flex",
     justifyContent: justify,
     alignItems,
     flexWrap: wrap,
@@ -37,15 +37,15 @@ export const Grid = ({
   };
 
   if (expand) {
-    styles.height = '100%';
-    styles.width = '100%';
+    styles.height = "100%";
+    styles.width = "100%";
   }
 
   return (
     <div className={className} style={styles}>
       {React.Children.map(children, (child: ReactElement<IItem> | null) => {
         if (child === null) {
-          console.error('Grid child should be Grid or Item.');
+          console.error("Grid child should be Grid or Item.");
           return null;
         }
         return spacing
@@ -83,7 +83,7 @@ export class Item extends React.Component<IItem> {
   }
 
   componentDidMount(): void {
-    window.addEventListener('resize', this.update);
+    window.addEventListener("resize", this.update);
   }
 
   update = () => {
@@ -100,12 +100,12 @@ export class Item extends React.Component<IItem> {
     };
 
     for (const b in props) {
-      if (typeof breakpoints[b] !== 'undefined' && breakpoints[breakpoint] >= breakpoints[b]) {
+      if (typeof breakpoints[b] !== "undefined" && breakpoints[breakpoint] >= breakpoints[b]) {
         const calculatedWidth = (props[b] / 12) * 100;
 
         if (!calculatedWidth && breakpoint === b) return null;
 
-        mergedStyle.width = calculatedWidth + '%';
+        mergedStyle.width = calculatedWidth + "%";
       }
     }
 
@@ -113,6 +113,6 @@ export class Item extends React.Component<IItem> {
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('resize', this.update);
+    window.removeEventListener("resize", this.update);
   }
 }

@@ -1,9 +1,9 @@
-import * as React from 'react';
-import cn from 'classnames';
+import * as React from "react";
+import cn from "classnames";
 
-const styles = require('./Image.scss');
-const loadingSrc = require('./nophoto.png');
-const errorSrc = require('./loadingError.png');
+const styles = require("./Image.scss");
+const loadingSrc = require("./nophoto.png");
+const errorSrc = require("./loadingError.png");
 
 interface IImage {
   src: string;

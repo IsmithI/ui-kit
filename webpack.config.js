@@ -4,6 +4,9 @@ module.exports = {
 	entry: './src/index.ts',
 	output: {
 		path: path.resolve(__dirname, 'build', "lib"),
+		filename: (chunkData) => {
+			return chunkData.chunk.name === 'main' ? '[name].js': '[name]/[name].js';
+		},
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss', '.css']

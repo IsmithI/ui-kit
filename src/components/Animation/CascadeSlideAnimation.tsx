@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { IHasChildren } from '../../interfaces';
-import { Animation, IAnimation } from './Animation';
-import { IItem } from '../Grid';
+import * as React from "react";
+import { IHasChildren } from "../../interfaces";
+import { Animation, IAnimation } from "./Animation";
+import { IItem } from "../Grid";
 
 interface ICascadeSlideAnimation extends IAnimation, IHasChildren, IItem {}
 
