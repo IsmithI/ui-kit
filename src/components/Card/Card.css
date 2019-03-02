@@ -1,0 +1,18 @@
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 0.8em; }
+  .card.sm-padding {
+    padding: 0.4em; }
+  .card.md-padding {
+    padding: 0.8em; }
+  .card.lg-padding {
+    padding: 1.2em; }
+  .card.none-elevation {
+    box-shadow: none; }
+  .card.regular-elevation {
+    box-shadow: 0 0.4em 1.4em 0.2em rgba(0, 0, 0, 0.15); }
+  .card.high-elevation {
+    box-shadow: 0 0.6em 2em 0.3em rgba(0, 0, 0, 0.15); }
+  .card.highest-elevation {
+    box-shadow: 0 0.8em 2em 0.4em rgba(0, 0, 0, 0.15); }

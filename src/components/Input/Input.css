@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800");
+.wrapper .input {
+  font-family: Montserrat, "sans-serif";
+  font-size: 16px;
+  font-weight: 500; }
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 1.2em 0.6em 0.4em 0.4em;
+  border-bottom: 2px solid #3b9bff;
+  background-color: white;
+  transition: all 300ms ease; }
+  .wrapper.focused {
+    box-shadow: 0 8px 16px 2px rgba(0, 0, 0, 0.15); }
+  .wrapper.fullWidth {
+    width: 100%; }
+  .wrapper .input {
+    top: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent; }
+  .wrapper .label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 200ms ease, color 200ms ease-in;
+    background-color: transparent;
+    padding: 6px 6px 0 0;
+    font-size: 18px;
+    color: #b9b9b9; }
+    .wrapper .label.minimized {
+      bottom: 0.6em;
+      margin-left: 2px;
+      color: #2d7dff;
+      transform: translateY(-10px) scale(0.6); }
+
+/* Hide HTML5 Up and Down arrows. */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input {
+  -moz-appearance: textfield; }

@@ -1,0 +1,119 @@
+.fadeIn-start {
+  opacity: 0; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.fadeIn-end {
+  opacity: 1; }
+
+.fadeOut-start {
+  opacity: 1; }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+.fadeOut-end {
+  opacity: 0; }
+
+.slideIn-right-start {
+  transform: translateX(-100vw); }
+
+@keyframes slideIn-right {
+  from {
+    transform: translateX(-100vw); }
+  to {
+    transform: translateX(0); } }
+
+.slideIn-right-end {
+  transform: translateX(0); }
+
+.slideIn-left-start {
+  transform: translateX(100vw); }
+
+@keyframes slideIn-left {
+  from {
+    transform: translateX(100vw); }
+  to {
+    transform: translateX(0); } }
+
+.slideIn-left-end {
+  transform: translateX(0); }
+
+.slideIn-up-start {
+  transform: translateY(100vh); }
+
+@keyframes slideIn-up {
+  from {
+    transform: translateY(100vh); }
+  to {
+    transform: translateY(0); } }
+
+.slideIn-up-end {
+  transform: translateY(0); }
+
+.slideIn-down-start {
+  transform: translateY(-100vh); }
+
+@keyframes slideIn-down {
+  from {
+    transform: translateY(-100vh); }
+  to {
+    transform: translateY(0); } }
+
+.slideIn-down-end {
+  transform: translateY(0); }
+
+.slideOut-right-start {
+  transform: translateX(0); }
+
+@keyframes slideOut-right {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(100vw); } }
+
+.slideOut-right-end {
+  transform: translateX(100vw); }
+
+.slideOut-left-start {
+  transform: translateX(0); }
+
+@keyframes slideOut-left {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(-100vw); } }
+
+.slideOut-left-end {
+  transform: translateX(-100vw); }
+
+.slideOut-up-start {
+  transform: translateY(0); }
+
+@keyframes slideOut-up {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(-100vh); } }
+
+.slideOut-up-end {
+  transform: translateY(-100vh); }
+
+.slideOut-down-start {
+  transform: translateY(0); }
+
+@keyframes slideOut-down {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(100vh); } }
+
+.slideOut-down-end {
+  transform: translateY(100vh); }

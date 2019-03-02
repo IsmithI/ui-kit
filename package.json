@@ -8,8 +8,7 @@
   ],
   "types": "build/lib/index.d.ts",
   "scripts": {
-    "dev": "webpack-dev-server --port 8000",
-    "build": "webpack --mode production --progress",
+    "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"src/**/*.tsx\" \"src/**/*.jsx\"",
     "lint": "tslint -p tsconfig.json -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,6 +29,7 @@
     "@storybook/addon-knobs": "^4.1.13",
     "@storybook/react": "^4.1.13",
     "@types/react": "^16.8.4",
+    "aphrodite": "^2.3.1",
     "classnames": "^2.2.6",
     "image-webpack-loader": "^4.6.0",
     "react": "^16.8.3",

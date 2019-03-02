@@ -1,0 +1,10 @@
+.image {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2em;
+  overflow: hidden; }
+  .image.loading {
+    min-width: 6em;
+    min-height: 4em;
+    background: #b9b9b9; }

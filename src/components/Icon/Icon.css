@@ -1,0 +1,22 @@
+.icon {
+  border-color: currentColor;
+  margin-right: 0.2em;
+  width: 2.5em; }
+  .icon > img {
+    width: 2.5em; }
+  .icon.xs {
+    width: 1.2em; }
+    .icon.xs > img {
+      width: 1.2em; }
+  .icon.sm {
+    width: 1.8em; }
+    .icon.sm > img {
+      width: 1.8em; }
+  .icon.md {
+    width: 3.6em; }
+    .icon.md > img {
+      width: 3.6em; }
+  .icon.lg {
+    width: 6em; }
+    .icon.lg > img {
+      width: 6em; }

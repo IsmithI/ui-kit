@@ -1,0 +1,11 @@
+.fadeOut-start {
+  opacity: 1; }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+.fadeOut-end {
+  opacity: 0; }
